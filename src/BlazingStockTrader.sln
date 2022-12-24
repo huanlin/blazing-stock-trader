@@ -4,11 +4,9 @@ VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Huanlin.WebCrawler.Stock", "Huanlin.WebCrawler.Stock\Huanlin.WebCrawler.Stock.csproj", "{7DB7645E-9E0E-490D-8691-DDC3C6D35124}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingStockTrader.Server", "BlazingStockTrader.Server\BlazingStockTrader.Server.csproj", "{B1F412C0-5767-43EC-A6BC-C28AB52551BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingStockTrader.WebUI", "BlazingStockTrader.WebUI\BlazingStockTrader.WebUI.csproj", "{BEFD0573-4FEC-4A44-A5E4-4F3840B32928}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingStockTrader.WebUI", "BlazingStockTrader.WebUI\BlazingStockTrader.WebUI.csproj", "{BEFD0573-4FEC-4A44-A5E4-4F3840B32928}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingStockTrader.App", "BlazingStockTrader.App\BlazingStockTrader.App.csproj", "{4776886E-7CE2-4D34-A377-9C1735312F03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingStockTrader.Maui", "BlazingStockTrader.Maui\BlazingStockTrader.Maui.csproj", "{4776886E-7CE2-4D34-A377-9C1735312F03}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,10 +18,6 @@ Global
 		{7DB7645E-9E0E-490D-8691-DDC3C6D35124}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DB7645E-9E0E-490D-8691-DDC3C6D35124}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DB7645E-9E0E-490D-8691-DDC3C6D35124}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B1F412C0-5767-43EC-A6BC-C28AB52551BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B1F412C0-5767-43EC-A6BC-C28AB52551BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B1F412C0-5767-43EC-A6BC-C28AB52551BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B1F412C0-5767-43EC-A6BC-C28AB52551BB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BEFD0573-4FEC-4A44-A5E4-4F3840B32928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BEFD0573-4FEC-4A44-A5E4-4F3840B32928}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BEFD0573-4FEC-4A44-A5E4-4F3840B32928}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,7 +33,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		        SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
 		SolutionGuid = {59182689-5312-484A-973B-929AF4024CA0}
+		        SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
 	EndGlobalSection
 EndGlobal
