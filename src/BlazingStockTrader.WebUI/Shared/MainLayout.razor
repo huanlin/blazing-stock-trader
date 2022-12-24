@@ -1,19 +1,52 @@
 ﻿@inherits LayoutComponentBase
 
-<PageTitle>BlazingStockTrader.Server</PageTitle>
+<PageTitle>BlazingStockTrader</PageTitle>
 
-<div class="page">
-    <div class="sidebar">
+<MudThemeProvider Theme="_myTheme" />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<MudLayout>
+    <MudAppBar>
+        BlazorApp1
+    </MudAppBar>
+    <MudDrawer Open="true">
         <NavMenu />
-    </div>
+    </MudDrawer>
 
-    <main>
-        <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-        </div>
-
-        <article class="content px-4">
+    <MudMainContent>
+        <MudContainer Fxied="true">
             @Body
-        </article>
-    </main>
-</div>
+        </MudContainer>
+    </MudMainContent>
+</MudLayout>
+
+@code
+{
+    private MudTheme _myTheme = new MudTheme()
+        {
+            Typography = new Typography()
+            {
+                Default = new Default()
+                {
+                    FontFamily = new[] { "微軟正黑體", "新細明體", "Helvetica", "Arial", "sans-serif" }
+                }
+            },
+            Palette = new Palette()
+            {
+                AppbarBackground = "#1976D2",
+                AppbarText = "#FFFFFF",
+                Primary = "#607D8B",
+                PrimaryDarken = "#455A64",
+                PrimaryLighten = "#CFD8DC",
+                TextPrimary = "#212121",
+                TextSecondary = "#757575",
+                Divider = "#BDBDBD"
+
+            },
+            PaletteDark = new PaletteDark()
+            {
+                Primary = Colors.Blue.Darken4
+            }
+        };
+}

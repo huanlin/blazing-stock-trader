@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AngleSharp.Html.Parser;
 using Huanlin.WebCrawler.Stock.Helpers;
-using Huanlin.WebCrwaler.Stock.Models;
+using Huanlin.WebCrawler.Stock.Models;
 
 namespace Huanlin.WebCrawler.Stock
 {

@@ -1,5 +1,7 @@
-﻿using BlazingStockTrader.WebUI.Data;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
+using MudBlazor.Services;
+using BlazingStockTrader.WebUI.Data;
+using Huanlin.WebCrawler.Stock;
 
 namespace BlazingStockTrader.Maui
 {
@@ -23,6 +25,8 @@ namespace BlazingStockTrader.Maui
 #endif
 
             builder.Services.AddSingleton<WeatherForecastService>();
+            builder.Services.AddSingleton<TwseWebClient>();
+            builder.Services.AddMudServices();
 
             return builder.Build();
         }

@@ -55,6 +55,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\BlazingStockTrader.WebUI\BlazingStockTrader.WebUI.csproj" />
+      <ProjectReference Include="..\Huanlin.WebCrawler.Stock\Huanlin.WebCrawler.Stock.csproj" />
     </ItemGroup>
 
 </Project>

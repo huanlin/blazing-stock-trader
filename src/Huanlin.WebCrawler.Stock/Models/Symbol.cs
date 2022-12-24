@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Huanlin.WebCrwaler.Stock.Models
+namespace Huanlin.WebCrawler.Stock.Models
 {
     public class Symbol
     {
