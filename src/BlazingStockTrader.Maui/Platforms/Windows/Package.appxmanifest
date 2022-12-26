@@ -6,7 +6,7 @@
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
   IgnorableNamespaces="uap rescap">
 
-  <Identity Name="28321MichaelTsai.186406B0506C2" Publisher="CN=Michael Tsai" Version="1.1.5.0" />
+  <Identity Name="28321MichaelTsai.186406B0506C2" Publisher="CN=3B713BC6-B714-48DD-8D4B-13390FC99751" Version="1.1.17.0" />
 
   <mp:PhoneIdentity PhoneProductId="d62a12a0-0f8b-480f-a35d-0fe45fc39bbc" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
@@ -46,6 +46,7 @@
 
   <Capabilities>
     <rescap:Capability Name="runFullTrust" />
+    <Capability Name="internetClient"/>
   </Capabilities>
 
 </Package>

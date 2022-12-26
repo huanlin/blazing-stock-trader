@@ -41,8 +41,9 @@
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
         <DefaultLanguage>zh-tw</DefaultLanguage>
         <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
-        <PackageCertificateThumbprint>E974BE0B542A1218EBC41D7EF034EC58A30808AF</PackageCertificateThumbprint>
+        <PackageCertificateThumbprint>05EC784E6910744EED9EEE8320556989C8AAEF75</PackageCertificateThumbprint>
         <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
+        <AppInstallerUri>c:\temp\</AppInstallerUri>
     </PropertyGroup>
 
     <ItemGroup>
