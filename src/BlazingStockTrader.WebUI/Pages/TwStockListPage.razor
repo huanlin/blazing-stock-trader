@@ -1,0 +1,33 @@
+﻿@page "/tw/stock-list"
+@inject TwseWebClient _webClient
+
+<PageTitle>上市櫃股票清單</PageTitle>
+
+<MudText class="pt-4" Typo="Typo.h5">上市櫃股票清單</MudText>
+
+<MudContainer Class="pa-8">
+    @if (_symbols == null)
+    {
+        <p><em>載入資料.....</em></p>
+    }
+    else
+    {
+        <MudDataGrid Items="@_symbols">
+            <Columns>
+                <Column T="Symbol" Field="Id" Title="股票代號" />
+                <Column T="Symbol" Field="Name" Title="股票名稱" />
+                <Column T="Symbol" Field="IndustryType" Title="產業類別" />
+            </Columns>
+        </MudDataGrid>
+    }
+</MudContainer>
+
+@code {
+    private List<Symbol> _symbols;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _symbols = await _webClient.GetStockSymbolsAsync();
+        await base.OnInitializedAsync();
+    }
+}

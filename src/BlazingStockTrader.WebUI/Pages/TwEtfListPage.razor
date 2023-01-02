@@ -1,0 +1,33 @@
+﻿@page "/tw/etf-list"
+@inject TwseWebClient _webClient
+
+
+<PageTitle>上市櫃 ETF</PageTitle>
+
+<MudText class="pt-4" Typo="Typo.h5">上市櫃 ETF 清單</MudText>
+
+<MudContainer Class="pa-8">
+    @if (_symbols == null)
+    {
+        <p><em>載入資料.....</em></p>
+    }
+    else
+    {
+        <MudDataGrid Items="@_symbols">
+            <Columns>
+                <Column T="Symbol" Field="Id" Title="ETF 代號" />
+                <Column T="Symbol" Field="Name" Title="ETF 名稱" />
+            </Columns>
+        </MudDataGrid>
+    }
+</MudContainer>
+
+@code {
+    private List<Symbol> _symbols;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _symbols = await _webClient.GetEtfSymbolsAsync();
+        await base.OnInitializedAsync();
+    }
+}
