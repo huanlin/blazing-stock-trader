@@ -6,28 +6,50 @@
 <MudText class="pt-4" Typo="Typo.h5">上市櫃股票清單</MudText>
 
 <MudContainer Class="pa-8">
-    @if (_symbols == null)
+    @if (_symbols == null || _symbols.Count < 1)
     {
-        <p><em>載入資料.....</em></p>
+        <p><em>正在載入資料.....</em></p>
+        return;
     }
-    else
-    {
-        <MudDataGrid Items="@_symbols">
-            <Columns>
-                <Column T="Symbol" Field="Id" Title="股票代號" />
-                <Column T="Symbol" Field="Name" Title="股票名稱" />
-                <Column T="Symbol" Field="IndustryType" Title="產業類別" />
-            </Columns>
-        </MudDataGrid>
-    }
+    <MudDataGrid T="Symbol" Items="@_symbols" Dense="@_denseMode" Striped="true" Hover="true"
+                 SortMode="SortMode.Single" FilterMode="DataGridFilterMode.ColumnFilterMenu" Filterable="true" QuickFilter="@QuickFilterFunc">
+        <ToolBarContent>
+            <MudSwitch @bind-Checked="@_denseMode" Color="Color.Primary">緊密排版</MudSwitch>
+            <MudSpacer />
+            <MudTextField @bind-Value="_searchString" Placeholder="搜尋股票代號或名稱" Adornment="Adornment.Start" Immediate="true"
+                          AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+        </ToolBarContent>
+        <Columns>
+            <Column T="Symbol" Field="Id" Title="股票代號" />
+            <Column T="Symbol" Field="Name" Title="股票名稱" />
+            <Column T="Symbol" Field="IndustryType" Title="產業類別" />
+        </Columns>
+    </MudDataGrid>
 </MudContainer>
 
 @code {
-    private List<Symbol> _symbols;
+    private List<Symbol> _symbols = new();
+    private string _searchString = string.Empty;
+    private bool _denseMode = false;
 
     protected override async Task OnInitializedAsync()
     {
         _symbols = await _webClient.GetStockSymbolsAsync();
         await base.OnInitializedAsync();
     }
+
+    // quick filter - filter gobally across multiple columns with the same input
+    private Func<Symbol, bool> QuickFilterFunc => x =>
+    {
+        if (string.IsNullOrWhiteSpace(_searchString))
+            return true;
+
+        if (x.Id!.Contains(_searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+
+        if (x.Name!.Contains(_searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+
+        return false;
+    };
 }
