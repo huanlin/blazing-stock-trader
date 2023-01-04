@@ -11,7 +11,7 @@
         <p><em>正在載入資料.....</em></p>
         return;
     }
-    <MudDataGrid T="Symbol" Items="@_symbols" Dense="@_denseMode" Striped="true" Hover="true"
+    <MudDataGrid T="Symbol" Items="@_symbols" Dense="@_denseMode" Striped="true" Hover="true" 
                  SortMode="SortMode.Single" FilterMode="DataGridFilterMode.ColumnFilterMenu" Filterable="true" QuickFilter="@QuickFilterFunc">
         <ToolBarContent>
             <MudSwitch @bind-Checked="@_denseMode" Color="Color.Primary">緊密排版</MudSwitch>
@@ -23,7 +23,15 @@
             <Column T="Symbol" Field="Id" Title="股票代號" />
             <Column T="Symbol" Field="Name" Title="股票名稱" />
             <Column T="Symbol" Field="IndustryType" Title="產業類別" />
+            <Column T="Symbol" Title="加入觀察">
+                <CellTemplate>
+                    <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Filled.RemoveRedEye" OnClick="@AddToWatchList" />
+                </CellTemplate>
+            </Column>
         </Columns>
+        <PagerContent>
+            <MudDataGridPager T="Symbol" />
+        </PagerContent>
     </MudDataGrid>
 </MudContainer>
 
@@ -52,4 +60,9 @@
 
         return false;
     };
+
+    private void AddToWatchList()
+    {
+        
+    }
 }
